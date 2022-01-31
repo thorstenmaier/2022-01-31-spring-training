@@ -2,8 +2,10 @@ package com.trivadis.spring.user;
 
 import com.trivadis.spring.user.service.UserService;
 import com.trivadis.spring.user.service.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class AppConfig {
@@ -14,7 +16,12 @@ public class AppConfig {
     }
 
     @Bean
-    public ServiceClient serviceClient() {
-        return new ServiceClient();
+    public UserService userService2() {
+        return new UserServiceImpl();
+    }
+
+    @Bean
+    public ServiceClient serviceClient(UserService userService) {
+        return new ServiceClient(userService);
     }
 }

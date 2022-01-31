@@ -8,9 +8,12 @@ import javax.annotation.PostConstruct;
 
 public class ServiceClient implements CommandLineRunner {
 
-    // Field Injection
-    @Autowired
+//    @Autowired
     private UserService userService;
+
+    public ServiceClient(UserService userService) {
+        this.userService = userService;
+    }
 
     @PostConstruct
     public void init() {
