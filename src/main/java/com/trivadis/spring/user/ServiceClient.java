@@ -3,11 +3,9 @@ package com.trivadis.spring.user;
 import com.trivadis.spring.user.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 
-@Component
 public class ServiceClient implements CommandLineRunner {
 
     // Field Injection
