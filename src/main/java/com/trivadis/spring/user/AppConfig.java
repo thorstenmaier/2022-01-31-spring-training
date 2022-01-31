@@ -2,10 +2,8 @@ package com.trivadis.spring.user;
 
 import com.trivadis.spring.user.service.UserService;
 import com.trivadis.spring.user.service.UserServiceImpl;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Primary;
 
 @Configuration
 public class AppConfig {

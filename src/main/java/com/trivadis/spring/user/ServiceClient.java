@@ -1,14 +1,13 @@
 package com.trivadis.spring.user;
 
 import com.trivadis.spring.user.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 
 import javax.annotation.PostConstruct;
 
 public class ServiceClient implements CommandLineRunner {
 
-//    @Autowired
+    //    @Autowired
     private UserService userService;
 
     public ServiceClient(UserService userService) {
