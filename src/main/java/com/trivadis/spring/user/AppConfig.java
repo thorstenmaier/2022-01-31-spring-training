@@ -11,12 +11,11 @@ import org.springframework.context.annotation.Profile;
 public class AppConfig {
 
     @Bean
-    @Profile("prod")
     public UserService userService1() {
         return new UserServiceProd();
     }
 
-    @Bean
+//    @Bean
     @Profile("dev")
     public UserService userService2() {
         return new UserServiceDev();
