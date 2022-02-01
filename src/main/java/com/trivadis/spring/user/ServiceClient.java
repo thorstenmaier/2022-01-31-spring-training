@@ -5,7 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 
 import javax.annotation.PostConstruct;
 
-public class ServiceClient {
+public class ServiceClient implements CommandLineRunner {
 
     //    @Autowired
     private UserService userService;
@@ -14,9 +14,8 @@ public class ServiceClient {
         this.userService = userService;
     }
 
-    @PostConstruct
-    public void init() {
+    @Override
+    public void run(String... args) throws Exception {
         userService.getAllUsers().forEach(System.out::println);
     }
-
 }

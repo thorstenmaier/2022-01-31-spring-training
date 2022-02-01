@@ -2,37 +2,27 @@ package com.trivadis.spring.user.service;
 
 import com.trivadis.spring.user.Duration;
 import com.trivadis.spring.user.domain.User;
+import com.trivadis.spring.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.context.ApplicationContext;
 
-import javax.annotation.security.RolesAllowed;
-import java.util.Arrays;
+import javax.annotation.PostConstruct;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserServiceProd implements UserService {
 
-    @Value("${user.firstnames}")
-    public String[] firstnames;
-
     @Autowired
-    private ApplicationContext applicationContext;
+    private UserRepository userRepository;
 
-    public UserServiceProd() {
-        System.out.println("#####");
+    @PostConstruct
+    public void init() {
+        System.out.println(userRepository.getClass());
+        userRepository.save(new User("Thorsten", "Maier"));
+
     }
 
     @Override
     @Duration
     public List<User> getAllUsers() {
-        System.out.println("*****");
-        return applicationContext.getBean(UserServiceProd.class).getInternalAllUsers();
-    }
-
-    @Duration
-    public List<User> getInternalAllUsers() {
-        return Arrays.stream(firstnames).map(f -> new User(f, f)).collect(Collectors.toList());
+        return userRepository.findAll();
     }
 }
