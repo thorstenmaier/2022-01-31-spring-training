@@ -1,6 +1,5 @@
 package com.trivadis.spring.user.service;
 
-import com.trivadis.spring.user.ServiceClient;
 import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 
@@ -11,6 +10,6 @@ public class UserServiceTestConfig {
 
     @Bean
     public UserService userService3() {
-        return new UserServiceImpl();
+        return new UserServiceProd();
     }
 }

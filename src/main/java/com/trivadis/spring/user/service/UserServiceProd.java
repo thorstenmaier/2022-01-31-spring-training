@@ -5,17 +5,15 @@ import com.trivadis.spring.user.domain.User;
 import java.util.Arrays;
 import java.util.List;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceProd implements UserService {
 
-    public UserServiceImpl() {
+    public UserServiceProd() {
         System.out.println("#####");
     }
 
     @Override
     public List<User> getAllUsers() {
         return Arrays.asList(
-                new User("Guenther", "Nubert"),
-                new User("Bud", "Spencer"),
-                new User("Dieter", "Develop"));
+                new User("PROD", "PROD"));
     }
 }

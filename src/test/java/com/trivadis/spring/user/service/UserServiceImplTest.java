@@ -1,10 +1,8 @@
 package com.trivadis.spring.user.service;
 
-import com.trivadis.spring.user.ServiceClient;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -28,7 +26,7 @@ class UserServiceImplTest {
     public static class UserServiceTestConfig {
         @Bean
         public UserService userService3() {
-            return new UserServiceImpl();
+            return new UserServiceDev();
         }
     }
 
