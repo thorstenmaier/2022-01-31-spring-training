@@ -2,10 +2,7 @@ package com.trivadis.spring.user.domain;
 
 // INSERT INTO user (firstname) values ('Thorsten')
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 @Entity
 public class User {
@@ -13,6 +10,8 @@ public class User {
     @GeneratedValue
     private Long id;
     private String firstname;
+
+    @Column(unique = true)
     private String lastname;
 
     @OneToOne

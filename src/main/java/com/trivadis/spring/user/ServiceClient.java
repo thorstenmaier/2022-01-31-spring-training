@@ -3,8 +3,6 @@ package com.trivadis.spring.user;
 import com.trivadis.spring.user.service.UserService;
 import org.springframework.boot.CommandLineRunner;
 
-import javax.annotation.PostConstruct;
-
 public class ServiceClient implements CommandLineRunner {
 
     //    @Autowired
