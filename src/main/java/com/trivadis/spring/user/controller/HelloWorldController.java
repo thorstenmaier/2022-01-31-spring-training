@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
@@ -37,7 +38,7 @@ public class HelloWorldController {
     }
 
     @PostMapping("/echoUser")
-    public User helloUser(@RequestBody User user) {
+    public User helloUser(@RequestBody @Valid User user) {
         return user;
     }
 

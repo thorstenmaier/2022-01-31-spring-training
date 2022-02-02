@@ -3,6 +3,8 @@ package com.trivadis.spring.user.domain;
 // INSERT INTO user (firstname) values ('Thorsten')
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 public class User {
@@ -12,6 +14,8 @@ public class User {
     private String firstname;
 
     @Column(unique = true)
+    @NotNull
+    @Size(min = 2, max = 255)
     private String lastname;
 
     @OneToOne
