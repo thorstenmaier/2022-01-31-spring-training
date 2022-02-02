@@ -6,9 +6,9 @@ import com.trivadis.spring.user.domain.User;
 import com.trivadis.spring.user.repository.LogEntryRepository;
 import com.trivadis.spring.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
-import javax.transaction.Transactional;
 import java.util.List;
 
 public class UserServiceProd implements UserService {
@@ -24,7 +24,7 @@ public class UserServiceProd implements UserService {
         userRepository.save(new User("Thorsten", "Maier"));
     }
 
-    @Transactional
+    @Transactional(readOnly = true)
     public void createUser(User user) {
         logEntryRepository.save(new LogEntry("User created"));
         userRepository.save(user);
