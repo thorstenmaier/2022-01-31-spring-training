@@ -18,9 +18,6 @@ public class User {
     @Size(min = 2, max = 255)
     private String lastname;
 
-    @OneToOne
-    private Address address;
-
     public User() {
     }
 
