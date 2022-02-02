@@ -31,6 +31,11 @@ public class UserServiceProd implements UserService {
     }
 
     @Override
+    public User findUserById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
+    @Override
     @Duration
     public List<User> getAllUsers() {
         return userRepository.findAll();
